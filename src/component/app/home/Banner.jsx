@@ -30,11 +30,11 @@ const Banner = () => {
         >
           {bannerImage.map((banner, index) => (
             <SwiperSlide key={index} className="h-screen md:h-auto">
-              <div className="pt-16 flex justify-around items-center">
-                <div className="">
+              <div className="md:pt-16 md:flex justify-around items-center">
+                <div className="mt-10 md:mt-0">
                   <img src={banner?.image} alt="" />
                 </div>
-                <div>
+                <div className="px-5">
                   <h1>{banner?.title}</h1>
                   <p className="my-5">{banner?.description}</p>
                   <button className="button">Buy now</button>

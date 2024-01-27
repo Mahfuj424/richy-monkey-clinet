@@ -1,55 +1,55 @@
 export const spotlightData = [
     {
-        image: "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2019/05/horizon.jpg",
-        title: "Ghost Reaction",
+        image: "https://i.ibb.co/bb3Y3X7/latest-Product.jpg",
+        title: "Richy Monkey v1",
         rating: "9.5 / 10",
         subTitle: "Action, Adventure"
     },
     {
-        image: "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2019/08/gostR.jpg",
-        title: "Ghost Reaction",
+        image: "https://i.ibb.co/DwxZBJ9/latest-Product2.jpg",
+        title: "Richy Monkey v2",
         rating: "9.5 / 10",
         subTitle: "Action, Adventure"
     },
     {
-        image: "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/uncharted-cover-768x1138.jpg",
-        title: "Ghost Reaction",
+        image: "https://i.ibb.co/bb3Y3X7/latest-Product.jpg",
+        title: "Richy Monkey v3",
         rating: "9.5 / 10",
         subTitle: "Action, Adventure"
     },
     {
-        image: "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/batman-arkham-knight.jpg",
-        title: "Ghost Reaction",
+        image: "https://i.ibb.co/g6nFsgH/latest-Product3.jpg",
+        title: "Richy Monkey v3",
         rating: "9.5 / 10",
         subTitle: "Action, Adventure"
     },
     {
-        image: "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/The-Witcher-3-Wild-Hunt.jpg",
-        title: "Ghost Reaction",
+        image: "https://i.ibb.co/1JcK5xH/latest-Product4.jpg",
+        title: "Richy Monkey v4",
         rating: "9.5 / 10",
         subTitle: "Action, Adventure"
     },
     {
-        image: "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/dark-souls-3-cover.jpg",
-        title: "Ghost Reaction",
+        image: "https://i.ibb.co/2FTbZ39/latest-Product5.jpg",
+        title: "Richy Monkey v5",
         rating: "9.5 / 10",
         subTitle: "Action, Adventure"
     },
     {
-        image: "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/04/review-thumbnail-1.jpg",
-        title: "Ghost Reaction",
+        image: "https://i.ibb.co/g6nFsgH/latest-Product3.jpg",
+        title: "Richy Monkey v6",
         rating: "9.5 / 10",
         subTitle: "Action, Adventure"
     },
     {
-        image: "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/uncharted-cover-768x1138.jpg",
-        title: "Ghost Reaction",
+        image: "https://i.ibb.co/bb3Y3X7/latest-Product.jpg",
+        title: "Richy Monkey v7",
         rating: "9.5 / 10",
         subTitle: "Action, Adventure"
     },
     {
-        image: "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/The-Witcher-3-Wild-Hunt.jpg",
-        title: "Ghost Reaction",
+        image: "https://i.ibb.co/DwxZBJ9/latest-Product2.jpg",
+        title: "Richy Monkey v8",
         rating: "9.5 / 10",
         subTitle: "Action, Adventure"
     },
