@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: #1e1407;
+}
+
+.button{
+    @apply uppercase text-lg font-bold text-white px-8 duration-300 py-2 bg-primary hover:bg-white hover:text-primary
+}
