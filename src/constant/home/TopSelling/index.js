@@ -1,41 +1,41 @@
 export const topSellingData = [
     {
-        image : "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/transformer-poster-300x300.jpg",
+        image : "https://i.ibb.co/M9LxDJs/t-shirt-1.jpg",
         title: "transfomers",
         amount: "6"
     },
     {
-        image : "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/metal-300x300.jpg",
+        image : "https://i.ibb.co/TBQrbWt/t-shirt-2jpg.jpg",
         title: "metal gear - poster",
         amount: "6"
     },
     {
-        image : "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/10/witcher-300x300.jpg",
+        image : "https://i.ibb.co/0YqK6RK/t-shirt-3jpg.jpg",
         title: "Witcher 3",
         amount: "6"
     },
     {
-        image : "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/metal-300x300.jpg",
+        image : "https://i.ibb.co/cKqQ9MY/t-shirt-4.jpg",
         title: "metal gear - poster",
         amount: "6"
     },
     {
-        image : "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/transformer-poster-300x300.jpg",
+        image : "https://i.ibb.co/M9LxDJs/t-shirt-1.jpg",
         title: "transfomers",
         amount: "6"
     },
     {
-        image : "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/metal-300x300.jpg",
+        image : "https://i.ibb.co/TBQrbWt/t-shirt-2jpg.jpg",
         title: "metal gear - poster",
         amount: "6"
     },
     {
-        image : "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/10/witcher-300x300.jpg",
+        image : "https://i.ibb.co/0YqK6RK/t-shirt-3jpg.jpg",
         title: "Witcher 3",
         amount: "6"
     },
     {
-        image : "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2016/06/metal-300x300.jpg",
+        image : "https://i.ibb.co/cKqQ9MY/t-shirt-4.jpg",
         title: "metal gear - poster",
         amount: "6"
     },

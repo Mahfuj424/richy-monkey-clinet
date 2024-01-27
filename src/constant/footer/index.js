@@ -49,6 +49,5 @@ export const sortCategory = [
     {name:"Misc"},
 ];
 
-export const footerLogo = "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2019/09/logo-1.png";
 
 export const createdBy = "Designed & Developed by Mahfuj Ahmed";

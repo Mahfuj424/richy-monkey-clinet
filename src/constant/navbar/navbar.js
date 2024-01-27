@@ -3,8 +3,7 @@ import LocalMallIcon from "@mui/icons-material/LocalMall";
 import PlayLessonIcon from "@mui/icons-material/PlayLesson";
 import PeopleIcon from "@mui/icons-material/People";
 import PostAddIcon from "@mui/icons-material/PostAdd";
-export const logo =
-  "https://demo.themexpert.com/wordpress/gamez/game-review/wp-content/uploads/sites/3/2019/09/logo-1.png";
+export const logo = "https://i.ibb.co/5R0gF0s/richy-mokey.png";
 
 export const navMenu = [
   {

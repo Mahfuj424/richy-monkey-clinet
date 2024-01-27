@@ -30,31 +30,19 @@ const Banner = () => {
         >
           {bannerImage.map((banner, index) => (
             <SwiperSlide key={index} className="h-screen md:h-auto">
-              <div className="card card-compact bg-base-100 shadow-xl rounded-none pb-5">
-                <div className="relative flex justify-center items-center">
-                  <img className="md:h-screen h-2/4 w-screen"
-                    src={banner?.image1}
-                    alt="banner"
-                  />
-                  <div className="absolute bottom-5">
-                    <img
-                      src={banner?.image2}
-                      alt="banner"
-                    />
-                  </div>
+              <div className="pt-16 flex justify-around items-center">
+                <div className="">
+                  <img src={banner?.image} alt="" />
+                </div>
+                <div>
+                  <h1>{banner?.title}</h1>
+                  <p className="my-5">{banner?.description}</p>
+                  <button className="button">Buy now</button>
                 </div>
               </div>
             </SwiperSlide>
           ))}
-
-          {/* ))} */}
         </Swiper>
-        <style jsx>{`
-          .custom-next-button,
-          .custom-prev-button {
-            color: #ff9800; /* Set the desired color */
-          }
-        `}</style>
       </div>
     </div>
   );
