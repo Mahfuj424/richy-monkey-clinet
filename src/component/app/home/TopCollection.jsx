@@ -1,27 +1,28 @@
 import React, { useState } from "react";
-import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
 import SectionTitle from "../../SectionTitle/SectionTitle";
+import FilterTiltShiftIcon from "@mui/icons-material/FilterTiltShift";
+import TopCollectionCategory from "./TopCollectionCategory";
 
-import SpotlightCategory from "./SpotlightCategory";
+const TopCollection = () => {
 
-const SpotLight = () => {
-  const [selectCategory, setSelectCategory] = useState("latest");
+  const [selectCategory, setSelectCategory]= useState('topRated')
+
   const categories = [
     {
-      name: "latest",
+      name: "topRated",
     },
     {
-      name: "popular",
+      name: "trending",
     },
   ];
 
   return (
-    <div className="px-5">
+    <div className="pb-20 px-5">
       <div>
         <SectionTitle
-          title={"spotlight this month"}
+          title={"TOP collection"}
           icon={
-            <AutoFixHighIcon
+            <FilterTiltShiftIcon
               className="text-primary"
               sx={{ fontSize: "50px" }}
             />
@@ -46,11 +47,10 @@ const SpotLight = () => {
             ))}
           </div>
         </div>
-
-        <SpotlightCategory selectCategory={selectCategory}/>
+        <TopCollectionCategory selectCategory={selectCategory}/>
       </div>
     </div>
   );
 };
 
-export default SpotLight;
+export default TopCollection;
