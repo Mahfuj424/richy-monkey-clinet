@@ -32,11 +32,11 @@ const Banner = () => {
             <SwiperSlide key={index} className="h-screen md:h-auto">
               <div className="md:pt-16 md:flex justify-around items-center">
                 <div className="mt-10 md:mt-0">
-                  <img src={banner?.image} alt="" />
+                  <img src={banner?.image} alt="banner" />
                 </div>
                 <div className="px-5">
                   <h1>{banner?.title}</h1>
-                  <p className="my-5">{banner?.description}</p>
+                  <p className="my-3">{banner?.description}</p>
                   <button className="button">Buy now</button>
                 </div>
               </div>
