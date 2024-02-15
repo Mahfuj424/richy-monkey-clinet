@@ -11,7 +11,7 @@ import { bannerImage } from "@/src/constant/home/banner";
 
 const Banner = () => {
   return (
-    <div className="container mx-auto pt-[72px] md:pt-0">
+    <div className="container mx-auto pt-[72px] md:pt-10">
       <div>
         <Swiper
           centeredSlides={true}
@@ -32,7 +32,7 @@ const Banner = () => {
             <SwiperSlide key={index} className="h-screen md:h-auto">
               <div className="md:pt-16 md:flex justify-around items-center">
                 <div className="mt-10 md:mt-0">
-                  <img src={banner?.image} alt="banner" />
+                  <img className="h-[500px]" src={banner?.image} alt="banner" />
                 </div>
                 <div className="px-5">
                   <h1>{banner?.title}</h1>

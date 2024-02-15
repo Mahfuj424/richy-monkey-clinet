@@ -1,6 +1,6 @@
 export const bannerImage = [
   {
-    image: "https://i.ibb.co/wpP3sWY/monkey-Banner-removebg-preview.png",
+    image: "https://i.ibb.co/XD1j2cK/richy-monkey-Banner-removebg-preview.png",
     title: (
       <h1 className="text-primary text-4xl font-bold">
         Enjoy a Whopping 50% Off <br /> on Our Exclusive Products!
@@ -22,7 +22,7 @@ export const bannerImage = [
       ),
   },
   {
-    image: "https://i.ibb.co/HVJ847B/monkey-Banner2-removebg-preview.png",
+    image: "https://i.ibb.co/kHgxyPB/banner2-removebg-preview.png",
     title: (
       <h1 className="text-primary text-4xl font-bold">
         Enjoy a Whopping 50% Off <br /> on Our Exclusive Products!
@@ -44,7 +44,7 @@ export const bannerImage = [
       ),
   },
   {
-    image: "https://i.ibb.co/kyXZ8P8/monkey-Banner1-removebg-preview.png",
+    image: "https://i.ibb.co/H47XV0C/banner3-removebg-preview.png",
     title: (
       <h1 className="text-primary text-4xl font-bold">
         Enjoy a Whopping 50% Off <br /> on Our Exclusive Products!

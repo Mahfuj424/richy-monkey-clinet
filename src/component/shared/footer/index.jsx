@@ -7,7 +7,7 @@ const Footer = () => {
     <div className="max-w-screen-xl mx-auto px-5 md:px-0 py-20">
       <div className="grid grid-cols-2 md:grid-cols-4">
         {footerData.map((data, index) => (
-          <div key={index} className="text-white mx-auto">
+          <div key={index} className="text-white md:mx-auto">
             <h1 className="text-lg font-semibold">{data?.category}</h1>
             <div className="mt-8">
               {data?.categoryList?.map((category, index) => (

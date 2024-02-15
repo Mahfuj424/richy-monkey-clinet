@@ -5,11 +5,11 @@ import TopCollectionCategory from "./TopCollectionCategory";
 
 const TopCollection = () => {
 
-  const [selectCategory, setSelectCategory]= useState('top Rated')
+  const [selectCategory, setSelectCategory]= useState('top rated')
 
   const categories = [
     {
-      name: "top Rated",
+      name: "top rated",
     },
     {
       name: "trending",
