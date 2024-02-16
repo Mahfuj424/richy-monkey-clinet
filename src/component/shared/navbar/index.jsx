@@ -97,10 +97,18 @@ const Navbar = () => {
                 />
               </div>
               <div className="cursor-pointer">
-                <ShoppingCartIcon />
+                <ShoppingCartIcon onClick={()=>setIsMenuOpen(true)}/>
+                <UserPage
+                  setIsMenuOpen={setIsMenuOpen}
+                  isMenuOpen={isMenuOpen}
+                />
               </div>
               <div className="cursor-pointer">
-                <PersonAddIcon />
+                <PersonAddIcon onClick={()=>setIsMenuOpen(true)}/>
+                <UserPage
+                  setIsMenuOpen={setIsMenuOpen}
+                  isMenuOpen={isMenuOpen}
+                />
               </div>
             </div>
           </div>
