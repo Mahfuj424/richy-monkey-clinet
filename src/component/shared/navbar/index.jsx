@@ -6,6 +6,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import dynamic from "next/dynamic";
 import Headroom from "react-headroom";
 import Link from "next/link";
+import SearchIcon from '@mui/icons-material/Search';
 import { logo, navMenu } from "@/src/constant/navbar/navbar";
 import MobileNavbar from "../MobileNavbar";
 const DynamicLink = dynamic(() => import("next/link"), {
@@ -87,6 +88,9 @@ const Navbar = () => {
           <div className="hidden md:flex gap-3 md:items-center">
             {/* Nav item */}
             <div className="flex gap-5 mr-5 text-primary">
+              <div className="cursor-pointer">
+                <SearchIcon />
+              </div>
               <div className="cursor-pointer">
                 <ShoppingCartIcon />
               </div>

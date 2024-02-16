@@ -21,10 +21,10 @@ const TopCollectionCategory = ({ selectCategory }) => {
             </div>
             <div className="bg-[#32220c] hover:bg-yellow-900 w-full border-primary hover:border-l-8 duration-300">
               <div className="px-10">
-                <h1 className="text-5xl text-primary">0{index + 1}</h1>
-                <h1 className="text-3xl font-bold my-5 cursor-pointer uppercase text-white hover:text-primary duration-200">
+                <div className="text-5xl text-primary">0{index + 1}</div>
+                <div className="text-3xl font-bold my-5 cursor-pointer uppercase text-white hover:text-primary duration-200">
                   {collection?.title}
-                </h1>
+                </div>
                 <div className="flex gap-5 text-secondary">
                   <p className="hover:text-primary duration-200">
                     {collection?.rating}{" "}

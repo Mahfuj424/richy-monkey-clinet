@@ -32,7 +32,7 @@ const SpotLight = () => {
         <div className="border-b-4 border-primary max-w-screen-xl mx-auto">
           <div className="flex gap-10 mb-2">
             {categories.map((category, index) => (
-              <h1
+              <div
                 onClick={() => setSelectCategory(category?.name)}
                 key={index}
                 className={`${
@@ -42,7 +42,7 @@ const SpotLight = () => {
                 } pb-1 uppercase text-xl font-semibold cursor-pointer text-primary`}
               >
                 {category?.name}
-              </h1>
+              </div>
             ))}
           </div>
         </div>

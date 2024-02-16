@@ -62,9 +62,9 @@ const SpotlightCategory = ({ selectCategory }) => {
                 >
                   <img src={spotlight?.image} alt="" />
                   <div className="bg-[#1e1407] pb-8">
-                    <h1 className="text-xl font-bold text-white text-start p-5 uppercase">
+                    <div className="text-xl font-bold text-white text-start p-5 uppercase">
                       {spotlight?.title}
-                    </h1>
+                    </div>
                     <div className="flex gap-3 text-secondary ps-5">
                       <p className="hover:text-primary duration-200">
                         {spotlight?.rating}
