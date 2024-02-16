@@ -1,12 +1,10 @@
 import CloseIcon from "@mui/icons-material/Close";
 import Link from "next/link";
 import { mobileNavMenu } from "@/src/constant/navbar/mobileNav";
-import Headroom from "react-headroom";
 
 const MobileNavbar = ({ setIsMenuOpen, isMenuOpen }) => {
-
+console.log(isMenuOpen);
   return (
-    <Headroom>
       <div>
         <div
           className={`fixed h-screen w-screen bg-black/30 lg:hidden backdrop-blur-sm top-0 right-0 -translate-x-full duration-500 ${
@@ -29,7 +27,6 @@ const MobileNavbar = ({ setIsMenuOpen, isMenuOpen }) => {
           </section>
         </div>
       </div>
-    </Headroom>
   );
 };
 

@@ -6,9 +6,10 @@ import MenuIcon from "@mui/icons-material/Menu";
 import dynamic from "next/dynamic";
 import Headroom from "react-headroom";
 import Link from "next/link";
-import SearchIcon from '@mui/icons-material/Search';
+import SearchIcon from "@mui/icons-material/Search";
 import { logo, navMenu } from "@/src/constant/navbar/navbar";
 import MobileNavbar from "../MobileNavbar";
+import UserPage from "../../app/userPage";
 const DynamicLink = dynamic(() => import("next/link"), {
   ssr: false,
   loading: () => <p>Loading...</p>,
@@ -88,8 +89,12 @@ const Navbar = () => {
           <div className="hidden md:flex gap-3 md:items-center">
             {/* Nav item */}
             <div className="flex gap-5 mr-5 text-primary">
-              <div className="cursor-pointer">
-                <SearchIcon />
+              <div  className="cursor-pointer">
+                <SearchIcon onClick={()=>setIsMenuOpen(true)}/>
+                <UserPage
+                  setIsMenuOpen={setIsMenuOpen}
+                  isMenuOpen={isMenuOpen}
+                />
               </div>
               <div className="cursor-pointer">
                 <ShoppingCartIcon />

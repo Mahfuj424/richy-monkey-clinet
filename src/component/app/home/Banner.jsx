@@ -37,7 +37,7 @@ const Banner = () => {
                 <div className="px-5">
                   <h1>{banner?.title}</h1>
                   <p className="my-3">{banner?.description}</p>
-                  <button className="button">Buy now</button>
+                  <button className="button">Shop Now</button>
                 </div>
               </div>
             </SwiperSlide>
