@@ -31,11 +31,9 @@ const UserPage = ({ setIsMenuOpen, isMenuOpen, category, setCategory }) => {
                 category={category}
               />
             </div>
-            <div
-              onClick={() => setIsMenuOpen(false)}
-              className="flex mt-40 text-white justify-end"
-            >
+            <div className="flex mt-40 text-white justify-end">
               <ArrowBackIosIcon
+                onClick={() => setIsMenuOpen(false)}
                 className="cursor-pointer"
                 sx={{ fontSize: "40px" }}
               />

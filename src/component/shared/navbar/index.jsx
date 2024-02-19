@@ -15,7 +15,6 @@ const DynamicLink = dynamic(() => import("next/link"), {
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [category, setCategory] = useState("");
-  console.log(category);
 
   const handleClick = (categoryName) => {
     setCategory(categoryName);

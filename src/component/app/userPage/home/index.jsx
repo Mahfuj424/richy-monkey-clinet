@@ -1,9 +1,8 @@
 import { categoryWise } from "@/src/constant/navUser";
-import React, { useState } from "react";
+import { TextField } from "@mui/material";
+import React from "react";
 
 const AuthenticationPage = ({ category, setCategory }) => {
-  console.log(category);
-
   return (
     <div className="max-w-screen-xl mx-auto mt-20">
       <div className="border-b-4 border-primary mx-20">
@@ -12,7 +11,7 @@ const AuthenticationPage = ({ category, setCategory }) => {
             <h1
               onClick={() => setCategory(categories?.categoryName)}
               key={index}
-              className={`text-2xl cursor-pointer font-semibold text-white ${
+              className={`text-2xl cursor-pointer font-semibold hover:border-b-4 border-primary text-white ${
                 categories?.categoryName === category &&
                 "border-b-4  border-primary pb-2"
               }`}
@@ -22,6 +21,11 @@ const AuthenticationPage = ({ category, setCategory }) => {
           ))}
         </div>
       </div>
+      {category === "Search" && (
+        <div className="mt-10 w-3/4 mx-auto">
+          <input className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white" type="text" name="" id="" placeholder="Search"/>
+        </div>
+      )}
     </div>
   );
 };
