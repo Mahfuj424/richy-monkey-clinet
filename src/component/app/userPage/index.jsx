@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
-import AuthenticationPage from "./home";
+import AllTab from "./home";
 
 const UserPage = ({ setIsMenuOpen, isMenuOpen, category, setCategory }) => {
   useEffect(() => {
@@ -26,7 +26,7 @@ const UserPage = ({ setIsMenuOpen, isMenuOpen, category, setCategory }) => {
         <section className="opacity-90 bg-black flex flex-col absolute left-0 top-0 h-screen gap-8 z-50 w-full overflow-y-auto">
           <div className="flex">
             <div className="w-[100%] mx-auto">
-              <AuthenticationPage
+              <AllTab
                 setCategory={setCategory}
                 category={category}
               />

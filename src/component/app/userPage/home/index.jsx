@@ -1,8 +1,9 @@
 import { categoryWise } from "@/src/constant/navUser";
 import { TextField } from "@mui/material";
 import React from "react";
+import User from "../User";
 
-const AuthenticationPage = ({ category, setCategory }) => {
+const AllTab = ({ category, setCategory }) => {
   return (
     <div className="max-w-screen-xl mx-auto mt-20">
       <div className="border-b-4 border-primary mx-20">
@@ -23,11 +24,19 @@ const AuthenticationPage = ({ category, setCategory }) => {
       </div>
       {category === "Search" && (
         <div className="mt-10 w-3/4 mx-auto">
-          <input className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white" type="text" name="" id="" placeholder="Search"/>
+          <input
+            className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white"
+            type="text"
+            name=""
+            id=""
+            placeholder="Search"
+          />
         </div>
       )}
+      {/* this is user page */}
+      {category === "User" && <User />}
     </div>
   );
 };
 
-export default AuthenticationPage;
+export default AllTab;
