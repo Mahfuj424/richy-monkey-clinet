@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import AuthenticationPage from "./home";
 
 const UserPage = ({ setIsMenuOpen, isMenuOpen }) => {
   useEffect(() => {
@@ -24,9 +25,14 @@ const UserPage = ({ setIsMenuOpen, isMenuOpen }) => {
       >
         <section className="opacity-90 bg-black flex flex-col absolute left-0 top-0 h-screen p-8 gap-8 z-50 w-full overflow-y-auto">
           <div>
-            <div className="text-end max-w-screen-lg mx-auto">something</div>
-            <div onClick={()=>setIsMenuOpen(false)} className="flex mt-64 text-white justify-end">
-              <ArrowBackIosIcon sx={{fontSize: "40px"}} />
+            <div className="text-end max-w-screen-lg mx-auto">
+              <AuthenticationPage/>
+            </div>
+            <div
+              onClick={() => setIsMenuOpen(false)}
+              className="flex mt-64 text-white justify-end"
+            >
+              <ArrowBackIosIcon sx={{ fontSize: "40px" }} />
             </div>
           </div>
         </section>
