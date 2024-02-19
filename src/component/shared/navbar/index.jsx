@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import PersonAddIcon from "@mui/icons-material/PersonAdd";
 import MenuIcon from "@mui/icons-material/Menu";
 import dynamic from "next/dynamic";
-import Headroom from "react-headroom";
 import Link from "next/link";
-import SearchIcon from "@mui/icons-material/Search";
 import { logo, navMenu } from "@/src/constant/navbar/navbar";
 import MobileNavbar from "../MobileNavbar";
 import UserPage from "../../app/userPage";
+import { categoryWise } from "@/src/constant/navUser";
 const DynamicLink = dynamic(() => import("next/link"), {
   ssr: false,
   loading: () => <p>Loading...</p>,
@@ -17,6 +14,13 @@ const DynamicLink = dynamic(() => import("next/link"), {
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [category, setCategory] = useState("");
+  console.log(category);
+
+  const handleClick = (categoryName) => {
+    setCategory(categoryName);
+    setIsMenuOpen(true);
+  };
 
   const navLink = (
     <>
@@ -88,28 +92,23 @@ const Navbar = () => {
         <div>
           <div className="hidden md:flex gap-3 md:items-center">
             {/* Nav item */}
-            <div className="flex gap-5 mr-5 text-primary">
-              <div  className="cursor-pointer">
-                <SearchIcon onClick={()=>setIsMenuOpen(true)}/>
-                <UserPage
-                  setIsMenuOpen={setIsMenuOpen}
-                  isMenuOpen={isMenuOpen}
-                />
-              </div>
-              <div className="cursor-pointer">
-                <ShoppingCartIcon onClick={()=>setIsMenuOpen(true)}/>
-                <UserPage
-                  setIsMenuOpen={setIsMenuOpen}
-                  isMenuOpen={isMenuOpen}
-                />
-              </div>
-              <div className="cursor-pointer">
-                <PersonAddIcon onClick={()=>setIsMenuOpen(true)}/>
-                <UserPage
-                  setIsMenuOpen={setIsMenuOpen}
-                  isMenuOpen={isMenuOpen}
-                />
-              </div>
+            <div className="flex gap-5 mr-5">
+              {categoryWise?.map((categories, index) => (
+                <div key={index}>
+                  <div
+                    onClick={() => handleClick(categories?.categoryName)}
+                    className="text-primary cursor-pointer"
+                  >
+                    {categories?.icon}
+                  </div>
+                  <UserPage
+                    setIsMenuOpen={setIsMenuOpen}
+                    isMenuOpen={isMenuOpen}
+                    setCategory={setCategory}
+                    category={category}
+                  />
+                </div>
+              ))}
             </div>
           </div>
           {/* dropdown */}
