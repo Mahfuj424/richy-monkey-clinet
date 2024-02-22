@@ -6,7 +6,7 @@ import User from "../User";
 const AllTab = ({ category, setCategory }) => {
   return (
     <div className="max-w-screen-xl mx-auto mt-20">
-      <div className="border-b-4 border-primary mx-20">
+      <div className="border-b-2 border-primary mx-20">
         <div className="flex w-2/6  mx-auto justify-between">
           {categoryWise?.map((categories, index) => (
             <h1
