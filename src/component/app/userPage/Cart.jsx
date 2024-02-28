@@ -1,6 +1,8 @@
 import React from "react";
-import RemoveIcon from '@mui/icons-material/Remove';
-import AddIcon from '@mui/icons-material/Add';
+import RemoveIcon from "@mui/icons-material/Remove";
+import AddIcon from "@mui/icons-material/Add";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 const Cart = () => {
   return (
@@ -11,6 +13,7 @@ const Cart = () => {
         <h1>Price</h1>
         <h1>Quantity</h1>
         <h1>Total</h1>
+        <h1>Action</h1>
       </div>
       <div className="mt-5 mx-5 text-primary text-xl flex justify-between items-center">
         <div>
@@ -23,11 +26,19 @@ const Cart = () => {
         <h1>The Witcher 3</h1>
         <h1>$50</h1>
         <div className="flex space-x-2">
-            <RemoveIcon sx={{fontSize: "40px"}}/>
-            <div className="w-10 h-10 border border-primary flex items-center justify-center">1</div>
-            <AddIcon sx={{fontSize: "40px"}}/>
+          <RemoveIcon sx={{ fontSize: "40px" }} />
+          <div className="w-10 h-10 border border-primary flex items-center justify-center">
+            1
+          </div>
+          <AddIcon sx={{ fontSize: "40px" }} />
         </div>
         <h1>$50</h1>
+        <div className="flex items-center flex-col space-y-3">
+          <h1 className="font-bold">
+            CheckOut <ArrowCircleRightIcon className="-ms-1" />
+          </h1>
+          <DeleteForeverIcon sx={{ color: "red" }} />
+        </div>
       </div>
     </div>
   );
