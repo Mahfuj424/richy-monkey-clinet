@@ -1,6 +1,7 @@
 import { categoryWise } from "@/src/constant/navUser";
 import React from "react";
 import User from "../User";
+import Cart from "../Cart";
 
 const AllTab = ({ category, setCategory }) => {
   return (
@@ -34,6 +35,10 @@ const AllTab = ({ category, setCategory }) => {
       )}
       {/* this is user page */}
       {category === "User" && <User />}
+
+
+      {/* this is cart page */}
+      {category === "Cart" && <Cart/>}
     </div>
   );
 };
