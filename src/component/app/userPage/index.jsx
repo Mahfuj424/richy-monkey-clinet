@@ -4,7 +4,7 @@ import AllTab from "./home";
 
 const UserPage = ({ setIsMenuOpen, isMenuOpen, category, setCategory }) => {
   useEffect(() => {
-    // Add or remove a class to the body based on the menu state
+    
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
