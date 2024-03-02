@@ -10,7 +10,7 @@ const UserPage = ({ setIsMenuOpen, isMenuOpen, category, setCategory }) => {
     } else {
       document.body.style.overflow = "visible";
     }
-    // Cleanup: Remove the class when the component unmounts or when the menu closes
+    
     return () => {
       document.body.style.overflow = "visible";
     };
