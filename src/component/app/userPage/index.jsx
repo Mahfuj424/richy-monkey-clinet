@@ -3,6 +3,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import AllTab from "./home";
 
 const UserPage = ({ setIsMenuOpen, isMenuOpen, category, setCategory }) => {
+  
   useEffect(() => {
     
     if (isMenuOpen) {
