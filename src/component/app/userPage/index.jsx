@@ -31,6 +31,7 @@ const UserPage = ({ setIsMenuOpen, isMenuOpen, category, setCategory }) => {
                 category={category}
               />
             </div>
+            
             <div className="w-[5%] flex justify-center items-center h-screen">
               <div className="text-white">
                 <ArrowBackIosIcon
