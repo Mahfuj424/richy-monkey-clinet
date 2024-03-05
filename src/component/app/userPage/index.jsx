@@ -11,7 +11,6 @@ const UserPage = ({ setIsMenuOpen, isMenuOpen, category, setCategory }) => {
     } else {
       document.body.style.overflow = "visible";
     }
-    
     return () => {
       document.body.style.overflow = "visible";
     };
