@@ -3,7 +3,6 @@ import Link from "next/link";
 import { mobileNavMenu } from "@/src/constant/navbar/mobileNav";
 
 const MobileNavbar = ({ setIsMenuOpen, isMenuOpen }) => {
-console.log(isMenuOpen);
   return (
       <div>
         <div
