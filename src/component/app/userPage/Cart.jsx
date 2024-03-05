@@ -15,7 +15,6 @@ const Cart = () => {
         <h1>Total</h1>
         <h1>Action</h1>
       </div>
-      
       <div className="mt-5 mx-5 text-primary text-xl flex justify-between items-center">
         <div>
           <img
