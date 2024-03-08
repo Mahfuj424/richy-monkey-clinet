@@ -152,7 +152,11 @@ const User = () => {
           )}
         </div>
       ) : (
-        <UserInfo setCurrentUser={setCurrentUser} currentUser={currentUser}/>
+        <UserInfo
+          setCurrentUser={setCurrentUser}
+          currentUser={currentUser}
+          auth={auth}
+        />
       )}
     </div>
   );

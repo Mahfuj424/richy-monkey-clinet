@@ -1,16 +1,16 @@
 import React from "react";
 import { getAuth, signOut } from "firebase/auth";
-import { app } from "@/firebase/firebase-config";
+import LogoutIcon from "@mui/icons-material/Logout";
 
-const UserInfo = ({ setCurrentUser, currentUser }) => {
+const UserInfo = ({ setCurrentUser, currentUser, auth }) => {
   const handleSignOut = () => {
-    const auth = getAuth(app);
     signOut(auth)
       .then((result) => {
-        alert(result)
+        setCurrentUser(null);
+        console.log(result);
       })
       .catch((error) => {
-        alert(error?.message)
+        alert(error?.message);
       });
   };
 
@@ -33,7 +33,9 @@ const UserInfo = ({ setCurrentUser, currentUser }) => {
         <h1>{currentUser?.displayName}</h1>
         <h1>{currentUser?.email}</h1>
         <div>
-          <button className="button" onClick={handleSignOut}>LogOut</button>
+          <button className="button" onClick={handleSignOut}>
+            LogOut <LogoutIcon />
+          </button>
         </div>
       </div>
     </div>
