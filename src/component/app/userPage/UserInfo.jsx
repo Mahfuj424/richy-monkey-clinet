@@ -22,6 +22,7 @@ const UserInfo = ({ setCurrentUser, currentUser, auth }) => {
         <h1>Email</h1>
         <h1>Action</h1>
       </div>
+      
       <div className="mt-5 mx-5 text-primary text-xl flex justify-between items-center">
         <div>
           <img
@@ -29,7 +30,7 @@ const UserInfo = ({ setCurrentUser, currentUser, auth }) => {
             src={currentUser?.photoURL}
             alt="profile"
           />
-          
+
         </div>
         <h1>{currentUser?.displayName}</h1>
         <h1>{currentUser?.email}</h1>
