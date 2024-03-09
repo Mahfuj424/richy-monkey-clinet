@@ -29,6 +29,7 @@ const UserInfo = ({ setCurrentUser, currentUser, auth }) => {
             src={currentUser?.photoURL}
             alt="profile"
           />
+          
         </div>
         <h1>{currentUser?.displayName}</h1>
         <h1>{currentUser?.email}</h1>
