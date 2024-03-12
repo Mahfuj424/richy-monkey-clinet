@@ -1,7 +1,13 @@
 import { Checkbox } from "@mui/material";
 import React, { useState } from "react";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
-import { getAuth, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  GoogleAuthProvider,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+} from "firebase/auth";
 import { app } from "@/firebase/firebase-config";
 import UserInfo from "./UserInfo";
 
@@ -22,6 +28,53 @@ const User = () => {
       });
   };
 
+  // sign up with email and password
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const name = form.get("name");
+    const email = form.get("email");
+    const password = form.get("password");
+    const image = form.get("image");
+
+    const data = new FormData();
+    data.append("image", image);
+
+    fetch(
+      `https://api.imgbb.com/1/upload?key=20d1c8d996641e7f8f7de1db621a33ec`,
+      {
+        method: "POST",
+        body: data,
+      }
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        // console.log(data.data.url);
+        createUserWithEmailAndPassword(auth, email, password)
+          .then((result) => {
+            setCurrentUser(result.user);
+          })
+          .catch((err) => {
+            console.log(err.message);
+          });
+        console.log(name, email, password, data.data.url);
+      });
+  };
+
+  const handleSignInSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    signInWithEmailAndPassword(auth, email, password)
+      .then((result) => {
+        setCurrentUser(result.user);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
   const handleChangeForm = (form) => {
     setActiveForm(form);
   };
@@ -36,7 +89,7 @@ const User = () => {
                 Login
               </h1>
               <p className="w-3/6 mx-auto mt-3 border border-primary text-center"></p>
-              <div className="mt-7 space-y-5">
+              <form onSubmit={handleSignInSubmit} className="mt-7 space-y-5">
                 <div className="w-full">
                   <h1 className="text-lg font-semibold text-white mb-2">
                     Your Email Address :
@@ -44,7 +97,7 @@ const User = () => {
                   <input
                     className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white"
                     type="text"
-                    name=""
+                    name="email"
                     id=""
                     placeholder="Email"
                   />
@@ -56,7 +109,7 @@ const User = () => {
                   <input
                     className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white"
                     type="text"
-                    name=""
+                    name="password"
                     id=""
                     placeholder="Password"
                   />
@@ -77,14 +130,18 @@ const User = () => {
                   </h1>
                 </div>
                 <div className="pt-1">
-                  <button className="button w-full">Login</button>
+                  <input
+                    type="submit"
+                    value={"Login"}
+                    className="button w-full"
+                  />
                 </div>
                 <div>
                   <button className="button w-full" onClick={handleSignIn}>
                     Google
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           )}
           {activeForm === "Sign Up" && (
@@ -93,18 +150,32 @@ const User = () => {
                 Register
               </h1>
               <p className="w-3/6 mx-auto mt-3 border border-primary text-center"></p>
-              <div className="mt-7 space-y-5">
-                <div className="w-full">
-                  <h1 className="text-lg font-semibold text-white mb-2">
-                    Your Name :
-                  </h1>
-                  <input
-                    className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white"
-                    type="text"
-                    name=""
-                    id=""
-                    placeholder="Enter Your Name"
-                  />
+              <form onSubmit={handleSubmit} className="mt-7 space-y-5">
+                <div className="w-full flex gap-5 items-center">
+                  <div className="w-full">
+                    <h1 className="text-lg font-semibold text-white mb-2">
+                      Your Name :
+                    </h1>
+                    <input
+                      className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white"
+                      type="text"
+                      name="name"
+                      id=""
+                      placeholder="Enter Your Name"
+                    />
+                  </div>
+                  <div className="w-full">
+                    <h1 className="text-lg font-semibold text-white mb-2">
+                      Image :
+                    </h1>
+                    <input
+                      className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white"
+                      type="file"
+                      name="image"
+                      id=""
+                      placeholder="Enter Your Name"
+                    />
+                  </div>
                 </div>
                 <div className="w-full">
                   <h1 className="text-lg font-semibold text-white mb-2">
@@ -113,7 +184,7 @@ const User = () => {
                   <input
                     className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white"
                     type="text"
-                    name=""
+                    name="email"
                     id=""
                     placeholder="Enter Your Email"
                   />
@@ -124,9 +195,9 @@ const User = () => {
                   </h1>
                   <input
                     className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white"
-                    type="text"
-                    name=""
-                    id=""
+                    type="password"
+                    name="password"
+                    id="password"
                     placeholder="Password"
                   />
                 </div>
@@ -140,14 +211,18 @@ const User = () => {
                   </span>
                 </p>
                 <div>
-                  <button className="button w-full">Register</button>
+                  <input
+                    type="submit"
+                    value={"Register"}
+                    className="button w-full"
+                  />
                 </div>
                 <div>
                   <button className="button w-full" onClick={handleSignIn}>
                     Google
                   </button>
                 </div>
-              </div>
+              </form>
             </div>
           )}
         </div>
