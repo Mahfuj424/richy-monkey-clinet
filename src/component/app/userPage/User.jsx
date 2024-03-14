@@ -40,6 +40,7 @@ const User = () => {
     const email = form.get("email");
     const password = form.get("password");
     const image = form.get("image");
+    setError("")
 
     const data = new FormData();
     data.append("image", image);
@@ -82,9 +83,11 @@ const User = () => {
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
+    setError("")
     signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
         setCurrentUser(result.user);
+        setError("")
       })
       .catch((err) => {
         console.log(err.message);
@@ -93,6 +96,7 @@ const User = () => {
 
   const handleResetPassword = () => {
     const email = emailRef.current.value;
+    setError("")
     if (!email) {
       setError("please provide your email before reset password");
       return;
