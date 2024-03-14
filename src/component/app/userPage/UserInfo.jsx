@@ -26,7 +26,7 @@ const UserInfo = ({ setCurrentUser, currentUser, auth }) => {
         <div>
           <img
             className="w-20 h-20 rounded-full"
-            src={currentUser?.photoURL || currentUser?.url}
+            src={currentUser?.photoURL}
             alt="profile"
           />
         </div>

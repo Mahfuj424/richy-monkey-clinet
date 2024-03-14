@@ -1,12 +1,14 @@
 import { Checkbox } from "@mui/material";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 const label = { inputProps: { "aria-label": "Checkbox demo" } };
 import {
   createUserWithEmailAndPassword,
   getAuth,
   GoogleAuthProvider,
+  sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithPopup,
+  updateProfile,
 } from "firebase/auth";
 import { app } from "@/firebase/firebase-config";
 import UserInfo from "./UserInfo";
@@ -14,6 +16,8 @@ import UserInfo from "./UserInfo";
 const User = () => {
   const [activeForm, setActiveForm] = useState("Sign Up");
   const [currentUser, setCurrentUser] = useState(null);
+  const [error, setError] = useState("");
+  const emailRef = useRef();
   const auth = getAuth(app);
   const provider = new GoogleAuthProvider();
 
@@ -53,6 +57,7 @@ const User = () => {
         createUserWithEmailAndPassword(auth, email, password)
           .then((result) => {
             setCurrentUser(result.user);
+            handleUpdateData(result.user, name, data.data.url);
           })
           .catch((err) => {
             console.log(err.message);
@@ -61,8 +66,17 @@ const User = () => {
       });
   };
 
+  const handleUpdateData = (user, name, photo) => {
+    updateProfile(user, {
+      displayName: name,
+      photoURL: photo,
+    })
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => console.log(err.message));
+  };
 
-  
   const handleSignInSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -74,6 +88,21 @@ const User = () => {
       })
       .catch((err) => {
         console.log(err.message);
+      });
+  };
+
+  const handleResetPassword = () => {
+    const email = emailRef.current.value;
+    if (!email) {
+      setError("please provide your email before reset password");
+      return;
+    }
+    sendPasswordResetEmail(auth, email)
+      .then((result) => {
+        alert("please check your mail");
+      })
+      .catch((err) => {
+        setError(err.message);
       });
   };
 
@@ -100,8 +129,10 @@ const User = () => {
                     className="w-full py-3 px-5 bg-black/30 border rounded-md border-primary text-white"
                     type="text"
                     name="email"
+                    ref={emailRef}
                     id=""
                     placeholder="Email"
+                    required
                   />
                 </div>
                 <div className="w-full">
@@ -114,22 +145,28 @@ const User = () => {
                     name="password"
                     id=""
                     placeholder="Password"
+                    required
                   />
                 </div>
-                <p className="text-white">
-                  Are you new here? Please{" "}
-                  <span
-                    className="cursor-pointer text-yellow-500 underline"
-                    onClick={() => handleChangeForm("Sign Up")}
+                <div className="flex justify-between items-center">
+                  <p className="text-white">
+                    Are you new here? Please{" "}
+                    <span
+                      className="cursor-pointer text-yellow-500 underline"
+                      onClick={() => handleChangeForm("Sign Up")}
+                    >
+                      Sign Up
+                    </span>
+                  </p>
+                  <p
+                    onClick={handleResetPassword}
+                    className="btn btn-link text-primary"
                   >
-                    Sign Up
-                  </span>
-                </p>
+                    Reset Password
+                  </p>
+                </div>
                 <div className="flex items-center justify-center">
-                  <Checkbox className="text-white" {...label} />
-                  <h1 className="font-semibold text-lg text-white">
-                    Remember Me
-                  </h1>
+                  <h1 className="text-red-500">{error}</h1>
                 </div>
                 <div className="pt-1">
                   <input
@@ -164,6 +201,7 @@ const User = () => {
                       name="name"
                       id=""
                       placeholder="Enter Your Name"
+                      required
                     />
                   </div>
                   <div className="w-full">
@@ -176,6 +214,7 @@ const User = () => {
                       name="image"
                       id=""
                       placeholder="Enter Your Name"
+                      required
                     />
                   </div>
                 </div>
@@ -189,6 +228,7 @@ const User = () => {
                     name="email"
                     id=""
                     placeholder="Enter Your Email"
+                    required
                   />
                 </div>
                 <div className="w-full">
@@ -201,6 +241,7 @@ const User = () => {
                     name="password"
                     id="password"
                     placeholder="Password"
+                    required
                   />
                 </div>
                 <p className="text-white">
