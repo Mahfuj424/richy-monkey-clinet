@@ -5,7 +5,6 @@ import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import ArrowCircleRightIcon from "@mui/icons-material/ArrowCircleRight";
 
 const Cart = () => {
-  
   return (
     <div className="max-w-screen-lg mx-auto mt-10 overflow-y-auto">
       <div className="text-white text-xl font-semibold flex justify-between bg-[#32220c] py-5 px-5 rounded-t-md">
